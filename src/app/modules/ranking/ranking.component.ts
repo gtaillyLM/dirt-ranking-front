@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RankingService } from 'src/app/services/ranking.service';
-import { Ranking } from './ranking.model';
+import { StageService } from 'src/app/services/stage.service';
+import { RallyStage, Ranking } from './ranking.model';
 
 @Component({
   selector: 'app-ranking',
@@ -10,14 +11,15 @@ import { Ranking } from './ranking.model';
 export class RankingComponent implements OnInit {
 
   public ranking: Ranking;
-  public stageNumber;
+  public rallyStage: RallyStage;
 
-  constructor(private rankingService: RankingService) { 
+  constructor(private rankingService: RankingService, 
+    private stageService: StageService) { 
   }
 
   async ngOnInit() {
-    this.ranking = await this.rankingService.getData(1, 'TEST');
-    console.log(this.ranking[0].entries)
+    this.ranking = await this.rankingService.getEntries(1, 'CATAMARCA PROVINCE');
+    this.rallyStage = await this.stageService.getRallyStage('CATAMARCA PROVINCE');
   }
 
 }

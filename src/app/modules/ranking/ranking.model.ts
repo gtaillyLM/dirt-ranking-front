@@ -19,3 +19,13 @@ export interface Entries {
     totalDiff: number,
     totalDiffClass: number
 }
+
+export interface RallyStage {
+    name: string,
+    stage: Stage[]
+}
+
+export interface Stage {
+    id: number,
+    name: string
+}
