@@ -1,0 +1,25 @@
+@import "src/assets/styles/styles.scss";
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Abel', sans-serif;
+    height: 3rem;
+    align-items: center;
+    padding: 0 2rem 0 1.5rem;
+    color: $primary-color;
+
+    .active-link {
+        color: $secondary-color;
+        font-weight: 300;
+    }
+
+    &__menu{
+        a {
+            padding-right: 1.5rem;
+            text-decoration: none;
+            color: $primary-color;
+        }
+    }
+}
