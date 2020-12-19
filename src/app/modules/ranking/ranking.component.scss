@@ -1,0 +1,116 @@
+@import "src/assets/styles/styles.scss";
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 2rem;
+    font-family: 'Abel', sans-serif;
+
+    &__stage {
+        display: flex;
+        flex-direction: column;
+
+        &-select-box {
+            outline:0px;
+            margin: 0.5rem 0rem;
+            height: 2rem;
+            width: 20rem;
+            border-radius: 8px;
+            box-shadow: 1px 1px $secondary-color;
+
+            select:focus {
+                background-color: red;
+            }
+        }
+
+        span {
+            margin: 0.2rem 0;
+        }
+        
+    }
+
+    
+
+    &__leaderboard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+
+        .ranking-name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.5rem 0rem;
+            font-weight: bold;
+        }
+
+        &-grid {
+            margin: 0rem 5rem;
+
+            &-legend {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background-color: $secondary-color;
+                border-radius: 2%;
+                color: white;
+                font-weight: bold;
+                padding: 0.2rem 0.2rem;
+                font-size: 14px;
+
+                span:first-child {
+                    padding: 0rem 0.5rem;
+                }
+                
+                span:last-child{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+
+            &-first-column:nth-child(2n){
+                background-color: #f1f1f1;
+            }
+
+            &-first-column {
+                display: grid;
+                grid-template-columns: 0.2fr 1fr 0.5fr;
+                align-items: center;
+                border-bottom: 1px solid #d3d3d3;
+
+                .rank {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 17px;
+                    font-weight: bold;
+                }
+
+                .time, .diff {
+                    display: flex;
+                    justify-content: flex-end;
+                    
+                }
+
+                .diff {
+                    font-weight: bold;
+                    margin: 0.2rem 0rem;
+                }
+
+                .driver {
+                    margin: 0.2rem 0rem;
+                }
+
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0.7rem 0.7rem;
+                }
+            }
+        }
+    }
+
+
+
+}
