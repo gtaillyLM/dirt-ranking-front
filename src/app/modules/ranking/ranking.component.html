@@ -1,0 +1,47 @@
+<div class="ranking">
+    <div class="ranking__stage">
+        <select class="ranking__stage-select-box" ngModel="selectedRally">
+            <option *ngFor="let rally of rallyStage[0]">{{rally.name}}</option>
+        </select>
+        <select class="ranking__stage-select-box" ngModel="selectedStage">
+            <option *ngFor="let stage of rallyStage[0].stage">{{stage.name}}</option>
+        </select>
+    </div>
+    <div class="ranking__leaderboard">
+        <div class="ranking__leaderboard-grid">
+            <span class="ranking-name">CLASSEMENT SPECIALE</span>
+            <div class="ranking__leaderboard-grid-legend">
+                <span>POS</span><span>CHRONO</span>
+            </div>
+            <div *ngFor="let entrie of ranking[0].entries" class="ranking__leaderboard-grid-first-column">
+                <span class="rank">{{entrie.stageRank}}</span>
+                <p>
+                    <span class="driver">{{entrie.driver}}</span>
+                    <span>{{entrie.car}}</span>
+                </p>
+                <p>
+                    <span class="time">{{entrie.stageTime}}</span>
+                    <span class="diff" *ngIf="entrie.stageDiff !== 0">+{{entrie.stageDiff}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="ranking__leaderboard-grid">
+            <span class="ranking-name">CLASSEMENT GENERAL</span>
+            <div class="ranking__leaderboard-grid-legend">
+                <span>POS</span><span>CHRONO</span>
+            </div>
+            <div *ngFor="let entrie of ranking[0].entries" class="ranking__leaderboard-grid-first-column">
+                <span class="rank">{{entrie.overallRank}}</span>
+                <p>
+                    <span class="driver">{{entrie.driver}}</span>
+                    <span>{{entrie.car}}</span>
+                </p>
+                <p>
+                    <span class="time">{{entrie.totalTime}}</span>
+                    <span class="diff" *ngIf="entrie.totalDiff !== 0">+{{entrie.totalDiff}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
