@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { RankingComponent } from './modules/ranking/ranking.component';
 import { HomeComponent } from './modules/home/home.component';
 import { HeaderComponent } from './modules/header/header.component';
+import { RulesComponent } from './modules/rules/rules.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RankingComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,
