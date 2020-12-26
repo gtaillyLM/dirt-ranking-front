@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { RallyStage } from '../modules/ranking/ranking.model';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class StageService {
 
   constructor(private http: HttpClient) { }
 
-  getRallyStage(name: string) : Promise<RallyStage> {
-    return this.http.post<RallyStage>('/api/stage', {rallyName: name}).toPromise();
+  getRallyStage() : Observable<RallyStage[]> {
+    return this.http.get<RallyStage[]>('/api/stage');
   }
 }
