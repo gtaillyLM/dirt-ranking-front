@@ -11,6 +11,6 @@ export class StageService {
   constructor(private http: HttpClient) { }
 
   getRallyStage() : Observable<RallyStage[]> {
-    return this.http.get<RallyStage[]>('/api/stage');
+    return this.http.get<RallyStage[]>('/api/v1/stage');
   }
 }
