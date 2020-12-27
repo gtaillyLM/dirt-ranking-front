@@ -8,6 +8,11 @@
     margin: 2rem 2rem;
     font-family: 'Abel', sans-serif;
 
+    @media only screen and (max-device-width: $screen-mobile-max) { 
+        font-size: 11.5px;
+        margin: 0.1rem 0.1rem;
+    }
+
     &__stage {
         display: flex;
         flex-direction: column;
@@ -39,16 +44,26 @@
         align-items: center;
         justify-content: center;
 
+        @media only screen and (max-device-width: $screen-mobile-max) { 
+            display: inline;
+            
+        }
+
         .ranking-name{
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0.5rem 0rem;
             font-weight: bold;
+            
         }
 
         &-grid {
             margin: 0rem 5rem;
+
+            @media only screen and (max-device-width: $screen-mobile-max) { 
+                margin: 2rem 0.5rem;
+            }
 
             &-legend {
                 display: grid;
@@ -59,6 +74,11 @@
                 font-weight: bold;
                 padding: 0.2rem 0.2rem;
                 font-size: 14px;
+
+                @media only screen and (max-device-width: $screen-mobile-max) { 
+                    font-size: 11.5px;
+                    padding: 0px;
+                }
 
                 span:first-child {
                     padding: 0rem 0.5rem;
@@ -85,6 +105,11 @@
                     justify-content: center;
                     font-size: 17px;
                     font-weight: bold;
+
+                    @media only screen and (max-device-width: $screen-mobile-max) { 
+                        font-size: 13px;
+                        padding: 0px;
+                    }
                 }
 
                 .time, .diff {
