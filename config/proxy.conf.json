@@ -1,8 +1,9 @@
 {
-    "/api/*": {
-      "target": "https://dirt-ranking-webapp.herokuapp.com/api/v1",
-      "secure": false,
-      "pathRewrite": {"^/api" : ""}
-    }
+  "/api/*": {
+    "target": "https://dirt-ranking-webapp.herokuapp.com/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
   }
+}
   

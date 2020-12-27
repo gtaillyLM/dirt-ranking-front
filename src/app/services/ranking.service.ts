@@ -10,7 +10,7 @@ export class RankingService {
 
   constructor(private http: HttpClient) { }
 
-  getEntries(stage: number, name: string) : Promise<Ranking> {
-    return this.http.post<Ranking>('/api/ranking', {stageNumber: stage, rallyName: name}).toPromise();
+  getEntries(stage: number, name: string) : Observable<Ranking> {
+    return this.http.post<Ranking>('/api/v1/ranking', {stageNumber: stage, rallyName: name});
   }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RankingComponent } from './modules/ranking/ranking.component';
 import { HomeComponent } from './modules/home/home.component';
 import { HeaderComponent } from './modules/header/header.component';
+import { FormsModule } from '@angular/forms';
 import { RulesComponent } from './modules/rules/rules.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RulesComponent } from './modules/rules/rules.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],

@@ -26,6 +26,6 @@ export interface RallyStage {
 }
 
 export interface Stage {
-    id: number,
+    _id: number,
     name: string
 }
