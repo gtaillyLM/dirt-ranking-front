@@ -11,12 +11,26 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-device-width: $screen-mobile-max) { 
+        font-size: 11.5px;
+        align-items: flex-start;
+        padding: 0.2rem 0.2rem;
+    }
+
     .inscription {
         font-weight: bold;
+
+        @media only screen and (max-device-width: $screen-mobile-max) { 
+            text-align: center;
+        }
     }
 
     p {
         font-weight: bold;
+        
+        @media only screen and (max-device-width: $screen-mobile-max) { 
+            text-align: center;
+        }
     }
 
 
@@ -24,6 +38,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media only screen and (max-device-width: $screen-mobile-max) { 
+            text-align: center;
+        }
     
 
         &-row {
@@ -33,6 +51,10 @@
             }
             img{
                 height: 150px;
+
+                @media only screen and (max-device-width: $screen-mobile-max) { 
+                    height: 70px;
+                }
             }
 
         }
@@ -48,11 +70,23 @@
             display: grid;
             grid-gap: 0.5rem;
             grid-template-columns : 0.3fr 1.8fr 1fr;
+
+            @media only screen and (max-device-width: $screen-mobile-max) { 
+                padding-bottom: 0.3rem;
+                display: grid;
+                grid-gap: 0.2rem;
+                grid-template-columns : 0.2fr 2.3fr 1.5fr;
+            }
         }
         
         img {
             height: 20px;
             width: 20px;
+
+            @media only screen and (max-device-width: $screen-mobile-max) { 
+                height: 13px;
+                width: 13px;
+            }
         }
 
     }
