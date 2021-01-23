@@ -20,7 +20,8 @@
                     <span>{{entrie.car}}</span>
                 </p>
                 <p>
-                    <span class="time">{{entrie.stageTime |  date:'mm:ss.SSS'}}</span>
+                    <span class="time" *ngIf="entrie.stageTime < 3600000">{{entrie.stageTime |  date:'mm:ss.SSS'}}</span>
+                    <span class="time" *ngIf="entrie.stageTime > 3600000">{{entrie.stageTime |  date:'h:mm:ss.SSS'}}</span>
                     <span class="diff" *ngIf="entrie.stageDiff !== 0 && entrie.stageDiff < 60000">+{{entrie.stageDiff | date:'s.SSS'}}</span>
                     <span class="diff" *ngIf="entrie.stageDiff > 60000">+{{entrie.stageDiff | date:'m:ss.SSS'}}</span>
                 </p>
@@ -38,9 +39,11 @@
                     <span>{{entrie.car}}</span>
                 </p>
                 <p>
-                    <span class="time">{{entrie.totalTime | date:'mm:ss.SSS'}}</span>
+                    <span class="time" *ngIf="entrie.totalTime < 3600000">{{entrie.totalTime | date:'mm:ss.SSS'}}</span>
+                    <span class="time" *ngIf="entrie.totalTime >= 3600000">{{entrie.totalTime | date:'hh:mm:ss.SSS'}}</span>
                     <span class="diff" *ngIf="entrie.totalDiff !== 0 && entrie.totalDiff < 60000">+{{entrie.totalDiff | date:'s.SSS'}}</span>
-                    <span class="diff" *ngIf="entrie.totalDiff > 60000">+{{entrie.totalDiff | date:'m:ss.SSS'}}</span>
+                    <span class="diff" *ngIf="entrie.totalDiff > 60000 && entrie.totalDiff < 3600000">+{{entrie.totalDiff | date:'m:ss.SSS'}}</span>
+                    <span class="diff" *ngIf="entrie.totalDiff >= 3600000">+{{entrie.totalDiff | date:'hh:m:ss.SSS'}}</span>
                 </p>
             </div>
         </div>
